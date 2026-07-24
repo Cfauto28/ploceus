@@ -33,7 +33,7 @@ public class Constants {
 	public static final String SERVER_NESTS_CONFIGURATION = "serverNests";
 
 	public static final String VERSIONS_MANIFEST_NAME = "ornithe-gen%d";
-	public static final String VERSIONS_MANIFEST_URL = "https://raw.githubusercontent.com/Cfauto28/mc-versions/refs/heads/gh-pages-new/gen%d/version_manifest.json";
+	public static final String VERSIONS_MANIFEST_URL = "https://cfauto28.github.io/mc-versions/gen%d/version_manifest.json";
 
 	public static String versionsManifestName(int generation) {
 		return String.format(VERSIONS_MANIFEST_NAME, generation);
