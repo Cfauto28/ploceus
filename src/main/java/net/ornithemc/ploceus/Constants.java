@@ -65,7 +65,7 @@ public class Constants {
 		return calamusGen2Mappings(generation).formatted(URLEncoder.encode(mc, StandardCharsets.UTF_8));
 	}
 	public static String calamusGen2Url(int generation) {
-		return MAVEN_URL + "/net/ornithemc/calamus-intermediary-gen" + generation + "/%1$s/calamus-intermediary-gen" + generation + "-%1$s-v2.jar";
+		return "https://raw.githubusercontent.com/Cfauto28/example-mod/main/libs/net/ornithemc/calamus-intermedairy-gen2/a1.0.16.05_20/calamus-intermedairy-gen2-a1.0.16.05_20-v2.jar";
 	}
 
 	public static final String FEATHER_MAVEN_GROUP = MAVEN_GROUP;
