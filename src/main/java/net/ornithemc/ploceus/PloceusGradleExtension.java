@@ -59,7 +59,7 @@ import net.ornithemc.ploceus.signatures.SignaturesProvider;
 public class PloceusGradleExtension implements PloceusGradleExtensionApi {
 
 	private static final Gson GSON = new GsonBuilder().create();
-	private static final int DEFAULT_INTERMEDIARY_GEN = 1;
+	private static final int DEFAULT_INTERMEDIARY_GEN = 2;
 
 	public static PloceusGradleExtension get(Project project) {
 		return (PloceusGradleExtension)project.getExtensions().getByName("ploceus");
