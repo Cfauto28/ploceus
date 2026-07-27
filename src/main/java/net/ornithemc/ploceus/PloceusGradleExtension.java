@@ -199,7 +199,7 @@ public class PloceusGradleExtension implements PloceusGradleExtensionApi {
 
 			loom.runs(runs -> {
 				runs.all(run -> {
-					run.vmArgs("-Dfabric.gameVersion=" + minecraftVersion());
+					run.getJvmArguments().addAll("-Dfabric.gameVersion=" + minecraftVersion());
 				});
 			});
 		});

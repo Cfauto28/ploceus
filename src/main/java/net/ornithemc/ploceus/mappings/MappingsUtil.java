@@ -21,7 +21,7 @@ public class MappingsUtil {
 		return getAsmRemapper(mappings, mappings.getNamespaceId(srcNs), mappings.getNamespaceId(dstNs));
 	}
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings("deprecation")
 	public static Remapper getAsmRemapper(MappingTree mappings, int srcNs, int dstNs) {
 		return new SimpleRemapper(new HashMap<String, String>() {
 
