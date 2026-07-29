@@ -212,7 +212,7 @@ public class OslVersionCache {
 
 		JsonObject baseVersionsJson = versionsJson.getAsJsonObject(version);
 
-		if (baseVersionsJson == null || baseVersionsJson.isEmpty()) {
+		if (baseVersionsJson == null) {
 			return null;
 		}
 
@@ -394,19 +394,19 @@ public class OslVersionCache {
 			return null;
 		}
 
-		JsonObject moduleVersionsJson = moduleJson.getAsJsonObject(version);
+		JsonObject moduleVersionJson = moduleJson.getAsJsonObject(version);
 
-		if (moduleVersionsJson == null) {
+		if (moduleVersionJson == null) {
 			return null;
 		}
 
-		JsonElement moduleVersionJson = moduleVersionsJson.get(side.id());
+		JsonElement moduleVersion = moduleVersionJson.get(side.id());
 
-		if (moduleVersionJson == null || moduleVersionJson.isJsonNull()) {
+		if (moduleVersion == null) {
 			return null;
 		}
 
-		return moduleVersionJson.getAsString();
+		return moduleVersion.getAsString();
 	}
 
 	private void saveModuleVersionToCache(String module, String version, GameSide side, String moduleVersion) throws Exception {

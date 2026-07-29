@@ -72,5 +72,4 @@ public interface PloceusGradleExtensionApi {
 	void serverOnlyMappings();
 
 	void setIntermediaryGeneration(int generation); // TODO: change to a property once gen 2 is the default
-
 }

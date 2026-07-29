@@ -1,14 +1,19 @@
 package net.ornithemc.ploceus;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import net.ornithemc.ploceus.api.GameSide;
 
 public class Constants {
 
 	public static final String MAVEN_NAME = "Ornithe";
-	public static final String MAVEN_URL = "https://maven.ornithemc.net/releases";
+	public static final String MAVEN_URL = "http://127.0.0.1:5500"; // https://maven.ornithemc.net/releases
 	public static final String META_URL = "https://meta.ornithemc.net";
 	public static final String MAVEN_GROUP = "net.ornithemc";
 
@@ -33,7 +38,7 @@ public class Constants {
 	public static final String SERVER_NESTS_CONFIGURATION = "serverNests";
 
 	public static final String VERSIONS_MANIFEST_NAME = "ornithe-gen%d";
-	public static final String VERSIONS_MANIFEST_URL = "https://cfauto28.github.io/mc-versions/gen%d/version_manifest.json";
+	public static final String VERSIONS_MANIFEST_URL = "http://127.0.0.1:5500/version_manifest.json";
 
 	public static String versionsManifestName(int generation) {
 		return String.format(VERSIONS_MANIFEST_NAME, generation);
@@ -64,8 +69,9 @@ public class Constants {
 	public static String calamusGen2Mappings(String mc, int generation) {
 		return calamusGen2Mappings(generation).formatted(URLEncoder.encode(mc, StandardCharsets.UTF_8));
 	}
+	
 	public static String calamusGen2Url(int generation) {
-		return "https://raw.githubusercontent.com/Cfauto28/example-mod/main/libs/net/ornithemc/calamus-intermedairy-gen2/a1.0.16.05_20/calamus-intermedairy-gen2-a1.0.16.05_20-v2.jar";
+		return MAVEN_URL + "/net/ornithemc/calamus-intermediary-gen" + generation + "/%1$s/calamus-intermediary-gen" + generation + "-%1$s-v2.jar";
 	}
 
 	public static final String FEATHER_MAVEN_GROUP = MAVEN_GROUP;

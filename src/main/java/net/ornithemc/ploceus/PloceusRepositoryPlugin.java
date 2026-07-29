@@ -28,7 +28,7 @@ public class PloceusRepositoryPlugin implements Plugin<PluginAware> {
 		}
 	}
 
-	private void declareRepositories(RepositoryHandler repositories) {;
+	private void declareRepositories(RepositoryHandler repositories) {
 		repositories.maven(repo -> {
 			repo.setName(Constants.MAVEN_NAME);
 			repo.setUrl(Constants.MAVEN_URL);

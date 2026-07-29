@@ -35,7 +35,7 @@ repositories {
 	}
 	maven {
 		name = 'Ornithe'
-		url = 'https://maven.ornithemc.net/releases'
+		url = 'https://repo1.maven.org/maven2/'
 	}
 	mavenCentral()
 }
@@ -53,12 +53,12 @@ dependencies {
 	compileOnly("org.ow2.asm:asm-util:9.9.1")
 	compileOnly("net.fabricmc:mapping-io:0.8.0")
 
-	implementation("net.ornithemc:mapping-utils:0.19.2")
-	implementation("net.ornithemc:condor:1.4.5")
-	implementation("net.ornithemc:exceptor:1.1.0")
-	implementation("net.ornithemc:preen:1.1.0");
-	implementation("net.ornithemc:nester:1.4.0")
-	implementation("io.github.gaming32:signature-changer:1.0.0")
+	//implementation("net.ornithemc:mapping-utils:0.19.2")
+	//implementation("net.ornithemc:condor:1.4.5")
+	//implementation("net.ornithemc:exceptor:1.1.0")
+	//implementation("net.ornithemc:preen:1.1.0");
+	//implementation("net.ornithemc:nester:1.4.0")
+	//implementation("io.github.gaming32:signature-changer:1.0.0")
 	implementation("com.vdurmont:semver4j:3.1.0")
 }
 
@@ -158,4 +158,13 @@ tasks.withType(PublishToMavenRepository) {
 						|| publication == publishing.publications.snapshotPlugin))
 				|| (repository == publishing.repositories.release && publication.name == "ploceusPluginMarkerMaven")
 	}
+}
+
+dependencies {
+		implementation files('libs/mapping-utils-0.19.2.jar')
+		implementation files('libs/signature-changer-1.0.0.jar')
+		implementation files('libs/nester-1.4.0.jar')
+		implementation files('libs/exceptor-1.1.0.jar')
+		implementation files('libs/preen-1.1.0.jar')
+		implementation files('libs/condor-1.4.5.jar')
 }
