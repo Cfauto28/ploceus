@@ -2,8 +2,10 @@ package net.ornithemc.ploceus;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +16,7 @@ import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.artifacts.ConfigurationContainer;
 import org.gradle.api.artifacts.Dependency;
 import org.gradle.api.provider.Property;
+import org.jetbrains.annotations.ApiStatus;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -153,7 +156,7 @@ public class PloceusGradleExtension implements PloceusGradleExtensionApi {
 			return GameSide.MERGED;
 		}));
 		this.intermediaryGeneration = project.getObjects().property(int.class);
-		this.intermediaryGeneration.convention(0); // we set the default in apply()
+		this.intermediaryGeneration.convention(DEFAULT_INTERMEDIARY_GEN);
 
 		apply();
 	}
@@ -500,9 +503,7 @@ public class PloceusGradleExtension implements PloceusGradleExtensionApi {
 		int oldGeneration = this.intermediaryGeneration.get();
 		this.intermediaryGeneration.set(generation);
 
-		if (oldGeneration != generation) {
-			switchedIntermediaryGen(oldGeneration, generation);
-		}
+		switchedIntermediaryGen(oldGeneration, generation);
 	}
 
 	private void switchedIntermediaryGen(int from, int to) {

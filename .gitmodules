@@ -1,0 +1,3 @@
+[submodule "depLib"]
+	path = depLib
+	url = https://github.com/Cfauto28/Cypress-depLibs
